@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Complete Scene - Assignment 5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="c"></canvas>
+    
+    <div class="ui-panel">
+        <h3>Assignment 5</h3>
+        <p><strong>WOW Feature:</strong> Interactive particle system with physics!</p>
+        
+        <div class="controls-section">
+            <h4>Scene Controls</h4>
+            <button id="toggleAnimation">Pause Animation</button>
+            <button id="resetScene">Reset Scene</button>
+            <button id="randomizeColors">Randomize Colors</button>
+        </div>
+        
+        <div class="controls-section">
+            <h4>Particle System (WOW Feature)</h4>
+            <button id="createParticles">Create Particles</button>
+            <button id="clearParticles">Clear Particles</button>
+            <label>
+                Gravity: <input type="range" id="gravitySlider" min="0" max="2" step="0.1" value="0.5">
+                <span id="gravityValue">0.5</span>
+            </label>
+        </div>
+        
+        <div class="controls-section">
+            <h4>Lighting</h4>
+            <label>
+                Ambient: <input type="range" id="ambientSlider" min="0" max="1" step="0.1" value="0.3">
+                <span id="ambientValue">0.3</span>
+            </label>
+            <label>
+                Directional: <input type="range" id="directionalSlider" min="0" max="2" step="0.1" value="1">
+                <span id="directionalValue">1.0</span>
+            </label>
+            <label>
+                Spot: <input type="range" id="spotSlider" min="0" max="2" step="0.1" value="1">
+                <span id="spotValue">1.0</span>
+            </label>
+        </div>
+    </div>
+    
+    <div class="stats">
+        <div>FPS: <span id="fps">60</span></div>
+        <div>Objects: <span id="objectCount">0</span></div>
+        <div>Particles: <span id="particleCount">0</span></div>
+        <div>Time: <span id="time">0</span>s</div>
+    </div>
+    
+    <div class="info-panel">
+        <h4>Controls & Instructions</h4>
+        <div class="control-section">
+            <h5>Camera Controls</h5>
+            <ul>
+                <li><strong>Left Mouse:</strong> Rotate around scene</li>
+                <li><strong>Right Mouse:</strong> Pan camera</li>
+                <li><strong>Mouse Wheel:</strong> Zoom in/out</li>
+                <li><strong>Middle Mouse:</strong> Pan (alternative)</li>
+            </ul>
+        </div>
+        
+        <div class="control-section">
+            <h5>Interactions</h5>
+            <ul>
+                <li><strong>Click Objects:</strong> Create particle explosion</li>
+                <li><strong>Create Particles:</strong> Random explosion</li>
+                <li><strong>Gravity Slider:</strong> Adjust particle physics</li>
+                <li><strong>Light Sliders:</strong> Control scene lighting</li>
+            </ul>
+        </div>
+        
+        <div class="control-section">
+            <h5>Scene Features</h5>
+            <ul>
+                <li>25+ animated 3D shapes</li>
+                <li>Real-time shadows & lighting</li>
+                <li>Interactive particle system</li>
+                <li>Procedural house model</li>
+                <li>Textured materials</li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
